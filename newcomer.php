@@ -169,27 +169,44 @@ $conn = null;
     <div class="gap-control-s"></div>
 
 <!--Ranking Zone-->
-<div class="load">
-                <div id="loadingText">上位5つを更新中<span class="dots">...</span></div>
-            </div>
+    <div id="updateStatus">
+        <div class="update-vote f-title">上位5つを更新中<span id="dots">...</span></div>
+    </div>
+    <script>
+        // 点滅を制御する関数
+        function toggleDots() {
+            var dotsElement = document.getElementById('dots');
+            var dotsText = dotsElement.innerHTML;
 
-        <?php
-            if ($lastVotingDateTime) {
-                // 最終投票日時を指定のフォーマットに変換して表示
-                $formattedLastVotingDate = date('更新：Y.m.d', strtotime($lastVotingDateTime));
-                echo $formattedLastVotingDate;
+            // ドットが3つ未満の場合に新しいドットを追加
+            if (dotsText.length < 3) {
+                dotsElement.innerHTML += '.';
             } else {
-                // 投票履歴がない場合の処理
-                echo "まだ投票がありません。";
-            }            
-            ?>
+                // 3つのドットが表示されたら最初からリセット
+                dotsElement.innerHTML = '.';
+            }
+        }
 
-        <div class="gap-control"></div>
+        // 500ミリ秒ごとにtoggleDots関数を呼び出すタイマー
+        setInterval(toggleDots, 500);
+    </script>
+    <?php
+        if ($lastVotingDateTime) {
+            // 最終投票日時を指定のフォーマットに変換して表示
+            $formattedLastVotingDate = date('更新：Y.m.d', strtotime($lastVotingDateTime));
+            echo $formattedLastVotingDate;
+        } else {
+            // 投票履歴がない場合の処理
+            echo "まだ投票がありません。";
+        }            
+    ?>
 
-        <p class="f-large-r">現在のランキング</p>
-        <?php if (!empty($ranking) && $voteHistory) : ?>
+    <div class="gap-control"></div>
 
-        <div class="ranking">
+    <p class="f-large-r">現在のランキング</p>
+    <?php if (!empty($ranking) && $voteHistory) : ?>
+
+    <div class="ranking">
         <?php $count = 0; ?>
         <?php foreach ($ranking as $rankData) : ?>
             <?php if ($count >= 5) break; ?> <!-- 5つ以上の要素は表示しない -->
@@ -213,17 +230,17 @@ $conn = null;
             }
             ?>
 
-            <div class="bar-graph text-align <?php echo $rankClass; ?>">
-                <!-- 画像を挿入 -->
-                <?php if (!empty($imagePath)) : ?>
-                    <img src="<?php echo $imagePath; ?>" alt="<?php echo $rank; ?>位の画像" style="width: 40px; height: 30px;">
-                <?php else : ?>
-                    <div style="width: 40px; height: 30px;"></div>
-                <?php endif; ?>
+        <div class="bar-graph text-align <?php echo $rankClass; ?>">
+            <!-- 画像を挿入 -->
+            <?php if (!empty($imagePath)) : ?>
+                <img src="<?php echo $imagePath; ?>" alt="<?php echo $rank; ?>位の画像" style="width: 40px; height: 30px;">
+            <?php else : ?>
+                <div style="width: 40px; height: 30px;"></div>
+            <?php endif; ?>
 
-                <p class="rank"><span><?php echo $rank; ?></span>位</p>
-                <p class="sportName"><?php echo $sportName; ?></p>
-            </div>
+            <p class="rank"><span><?php echo $rank; ?></span>位</p>
+            <p class="sportName"><?php echo $sportName; ?></p>
+        </div>
             <?php $count++; ?>
         <?php endforeach; ?>
     </div>
@@ -231,14 +248,14 @@ $conn = null;
         <p class="ranking asterisk">※投票するとランキングが表示されます。</p>
     <?php endif; ?>
 
-        <div class="gap-control"></div>
+    <div class="gap-control"></div>
 
-        <button class="cercle" id="rankingButton" onclick="toggleRanking()">ランキングに参加する</button>
-        <div class="arrow-container">
-            <div class="arrow-bottom"></div>
-            <div class="arrow-bottom arrow-bottom-Shifted"></div>
-        </div>
-        <div class="gap-control-s"></div>
+    <button class="cercle" id="rankingButton" onclick="toggleRanking()">ランキングに参加する</button>
+    <div class="arrow-container">
+        <div class="arrow-bottom"></div>
+        <div class="arrow-bottom arrow-bottom-Shifted"></div>
+    </div>
+    <div class="gap-control-s"></div>
 </div>
 <!-- 投票欄 -->
     <div class="ranking-section" id="rankingSection" style="display:none">
@@ -265,7 +282,6 @@ $conn = null;
         </div>
     </div>
     <div class="gap-control"></div>
-
 </div>
 
 <div class="wrapper">
