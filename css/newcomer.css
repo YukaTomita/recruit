@@ -1,0 +1,281 @@
+/* --------------------- 
+ スポーツランキング
+ --------------------- */
+.ranking {
+    margin: 60px 10px;
+}
+.vote{
+    margin: 60px 10px; 
+}
+.bar-graph {
+    height: 20px;
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sport-button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sport-button:hover {
+    background-color: #e0e0e0;
+}
+.sportName {
+    border: 1.5px solid #BBBBBB;
+    width: 400px;
+    height: 25px;
+    border-radius: 100vh;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+.rank {
+    width: 80px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.rank-1 .sportName {
+    border-color: #CAA846; /* 1位の場合の枠の色を黄緑 (#CAA846) に変更 */
+    border-width: 3px;
+}
+
+.rank-2 .sportName {
+    border-color: #B2BABA; /* 2位の場合の枠の色を灰色 (#B2BABA) に変更 */
+    border-width: 3px;
+}
+
+.rank-3 .sportName {
+    border-color: #8B4513; /* 3位の場合の枠の色を茶色 (#8B4513) に変更 */
+    border-width: 3px;
+}
+.rank span {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: bold;
+}
+.title-ranking {
+    font-size: 1.7rem;
+    line-height: 140%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.asterisk {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #8B2022;
+    margin: auto;
+}
+.rank-img{
+    width: 15px;
+    height: auto;
+}
+/*------------------
+        投票
+------------------*/
+.cercle{
+    background-color: #8B2022;
+    color: white;
+    font-size: 1.2rem;
+    width: 400px;
+    height: 40px;
+    border-radius: 150px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+  }
+
+.v-text{
+    text-align: left;
+    line-height: 2rem;
+}
+.ranking-section {
+    display: none;
+    width: 100%;
+    padding: 20px; /* 必要な場合はランキングセクションの内容との間に適切な余白を設定 */
+    box-sizing: border-box; 
+    background-color: #f2f2f2; /* ランキングセクションの背景色をグレー (#f2f2f2) に変更 */
+}
+
+.radio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-left: 30px;
+    gap: 20px; /* 選択肢の間隔調整 */
+}
+.radio-column {
+    flex-basis: 20%; /* 各列の幅を調整 */
+}
+.arrow-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    }
+    .arrow-bottom {
+    position: absolute;
+    border-bottom: solid 2px #8B2022;
+    border-right: solid 2px #8B2022;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    margin: auto;
+    }
+    .arrow-bottom-Shifted {
+    top: 15px;
+    }
+
+/*---------------------
+        SPORT
+---------------------*/
+.sport-container {
+    text-align: center;
+    position: relative;
+}
+.sport-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.sport-main-image {
+    width: 100%;
+    height: auto;
+}
+.sport-word {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    color: #000;
+    text-align: left;
+}
+    .bolder{
+        font-weight: bold;
+    }
+
+.link {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.sport-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    max-width: 500px;
+}
+.sport-popup:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%; 
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+.sport-popup-content {
+    text-align: center;
+}
+
+.sport-popup-title {
+    margin: 0 0 15px 0;
+}
+
+.sport-popup-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sport-popup-image {
+    width: 50%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sport-popup-comment {
+    width: 50%;
+}
+  
+.container button{
+    max-width:800px;
+    position: relative;
+    right: -250px;
+    bottom:225px;
+    color: white;
+    padding:0;
+    margin: 0;
+    border-bottom:solid 1px white;
+}
+.container button:before {
+    content: "\025b6";
+  }
+.container p{
+    max-width: 200px;
+    text-align: left;
+    position: relative;
+    right: -550px;
+    bottom:230px;
+    color: black;
+    padding:10px 0;
+    margin: 0;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+.detail1,
+.detail2,
+.detail3 {
+    opacity: 0;
+}
+
+.detail1.open,
+.detail2.open,
+.detail3.open {
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+}
+/* ---------------------------
+フレックス群 
+----------------------------- */
+.flex-ul {
+    display: flex;
+}
+.flex-img li {
+    margin-right: 15px;
+}
+.text-small{
+    font-size: 0.7rem;
+}
+.text-bottom{
+    margin-top: auto;
+    align-items: flex-end;
+}
+/* 画像100% */
+img {
+    width:100%;
+}
+
