@@ -1,0 +1,110 @@
+/*更新中・・・*/
+  .update-vote {
+    display: inline-block;
+    white-space: nowrap;
+}
+/*--ranking section--*/
+.ranking-section{
+  background-color: #f2f2f2;
+  width: 100%;
+  height: auto;
+}
+ /* X軸の目盛りを非表示にするためのCSS */
+ #voteChart .chartjs-size-monitor,
+ #voteChart .chartjs-size-monitor-expand,
+ #voteChart .chartjs-size-monitor-shrink {
+     display: none !important;
+ }
+.asterisk {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #8B2022;
+  margin: auto;
+}
+.option-container {
+  width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.option {
+  flex-basis: calc(25% - 10px); /* 4項目×3列で配置 */
+  margin-bottom: 10px; /* 項目間の余白 */
+  display: flex;
+  align-items: center;
+}
+/* 3列目のみ左寄せ */
+.option-container:nth-child(3) {
+  justify-content: flex-start;
+}
+.post-btn{
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border: #8B2022 solid 2px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: #8B2022;
+  font-weight: bolder;
+}
+/*く矢印*/
+.arrow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  }
+  .arrow-bottom {
+  position: absolute;
+  border-bottom: solid 2px #8B2022;
+  border-right: solid 2px #8B2022;
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+  margin: auto;
+  }
+  .arrow-bottom-Shifted {
+  top: 15px;
+  }
+
+/* cercle */
+.cercle{
+    background-color: #8B2022;
+    color: white;
+    font-size: 1.5rem;
+    width: 400px;
+    height: 40px;
+    border-radius: 150px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+  }
+
+/* 案件・技術 */
+.flex-job{
+    display: flex;
+    align-items: stretch;
+}
+ .flex1{
+    width: 70%;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+}
+ .flex2{
+    width: 30%;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+ }
+/* ボルドー */
+.font-bordeaux{
+  font-weight: 700;
+  font-style: normal;
+  color: #8B2022;
+  font-size: 1.3rem;
+}

@@ -1,0 +1,136 @@
+/*------------------------
+　　　　ひな形
+------------------------*/
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.breadcrumbs li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.breadcrumbs li::after {
+    content: "/";
+    margin-left: 5px;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+.topic-list {
+    list-style-type: none;
+    padding: 0;
+}
+.topic-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 30px;
+}
+.topic-info {
+    flex: 1;
+    padding: 10px;
+}
+.topic-image {
+    max-width: 200px;
+    margin-right: 20px;
+}
+.topic-title {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+.topic-date {
+    color: #999;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+.more-button {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+.more-link {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+
+#backButton {
+    float: right;
+  }
+
+/* 既存のスタイル */
+.article-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.article-image {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.article-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-date {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.article-title {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.read-more {
+    text-decoration: none;
+    color: #000;
+    margin-left: auto;
+}
+
+  .pager {
+    margin-top: 20px;
+  }
+
+  .pager a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .pager a.current {
+    background-color: gray;
+    color: white;
+  }

@@ -1,0 +1,403 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    font-family: Helvetica,"游ゴシック体", 'YuGothic', "游ゴシック", "Yu Gothic";
+    line-height: 2.2rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*---------------
+    文字の配置
+----------------*/
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-bottom{
+    align-items: flex-end;
+}
+
+/*---------------- 
+    フォント
+-----------------*/
+
+/* タイトル：ライン上文字 */
+.f-title{
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* 括弧内文字ブラック */
+.f-word-b{
+    color: #000;
+    font-size: 1.2rem;
+}
+
+/* ボルドー小 */
+.f-word-r{
+    color: #8B2022;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* ボルドー大 */
+.f-large-r{
+    color: #8B2022;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 700;
+}
+
+/* White */
+.f-white{
+    color: white;
+    font-size: 1.2rem;
+}
+
+/*------------------
+　　　ライン
+------------------*/
+/*短ライン*/
+.border-line{
+    border-top:1px solid #000;
+    width:25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px auto;
+  }
+  
+  /*長ライン*/
+  .border-line2{
+    border-top:1px solid #000;
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px auto;
+  }
+/*--------------------
+        画像
+--------------------*/
+.img{
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+/*----------------
+     背景色
+----------------*/
+.bg-gray{
+    background-color: #EEEEEE;
+}
+.wrapper{
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+ .txt{
+    display: inline-block;
+    text-align: left;
+ }
+
+/* 間隔あけ */
+.gap-control-s{
+    height: 2.5rem;
+}
+.gap-control{
+    height: 5rem;
+}
+.gap-control-l{
+    height: 10rem;
+}
+/*----------------------
+        写真交互
+----------------------*/
+.flex-pic{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.flex-pic:nth-child(even){
+    display: flex;
+    flex-direction: row-reverse; /*左右入れ替え*/
+     }
+    
+     @media(max-width : 750px ){
+        flex-pic:nth-child(even){
+        display: block;
+         }
+    }
+    
+.flex-pic:nth-child(odd){
+      display: flex;
+       }
+    @media(max-width : 750px ){
+        flex-pic:nth-child(odd){
+       display: block;
+       }
+      }
+.flex-pic-img{
+    max-width: 100%;
+    height: auto;
+}
+.flex-txt{
+    margin: 0 20px 0 20px;
+}
+.flex-text{
+    display: flex;
+    margin: 0 20px 0 20px;
+}
+
+/* ---------------------
+header
+---------------------- */
+.header {
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 90px;
+}
+.site-title{
+    width: 170px;
+    position: fixed;
+    top: 15px;
+    left: 55px;
+    z-index: 1;
+  }
+.logo{
+    width: 98%;
+    height: auto;
+}
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-X {
+    width: 40px;
+    position: fixed;
+    top: 30px;
+    right: 355px;
+    z-index: 1;
+}
+.header-entry {
+    background-color: #fb0004;
+    color: #fff;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    right: 100px;
+    z-index: 1;
+    height: 55px;
+    text-align: center;
+    padding-top: 35px;
+    font-size: 2rem;
+}
+.header-nav {
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 36.1vw;
+    text-align: center;
+    padding: 120px 0 0;
+    background-color:rgba(230, 230, 230, 0.95);
+    z-index: 2;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform .3s,opacity .3s;
+}
+.nav-item{
+    margin-bottom: 30px;
+}
+.nav-item:first-of-type{
+    margin-bottom: 40px;
+}
+.nav-item:last-of-type{
+    margin-bottom: 0;
+}
+.header-nav a{
+    color: #000;
+    font-size: 1.2rem;
+}
+  /* ハンバーガーボタン（メニューが開いていないとき） */
+.burger-btn{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100px; /* ボタンの幅を変更 */
+    height: 90px; /* ボタンの高さを変更 */
+    background-color: rgba(230, 230, 230, 0.95);
+    padding-left: 20px;
+  }
+  .bar{
+    display: block;
+    background-color: #000;
+    height: 3px;
+    width: 60px;
+    border-radius: 1px;
+  }
+  .bar_top{
+    transform: translateY(-15px);
+    transition: transform .3s;
+  }
+  .bar_bottom{
+    transform: translateY(15px);
+    transition: transform .3s;
+  }
+  /* ハンバーガーボタン（メニューが開いたとき） */
+.bar.cross.bar_top{
+    transform: translateY(3px)rotate(30deg);
+    transition: transform .3s;
+  }
+  .bar.cross.bar_mid{
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .bar.cross.bar_bottom{
+    transform: translateY(-3px)rotate(-30deg);
+    transition: transform .3s;
+  }
+  /* ハンバーガーメニューが開いたとき */
+body.noscroll{
+    overflow: hidden;
+  }
+  .header-nav.open{
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform .3s,opacity .3s;
+  }
+  .burger-musk{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,.5);
+    z-index: 1;
+  }
+
+.header_space{
+    margin-bottom: 90px;
+}
+
+/* --------------------------
+エントリー
+--------------------------- */
+.entry {
+    margin-top: 200px;
+}
+.entry-button {
+    background-color: #389D52;
+    color: #ffffff;
+    border-radius: 100px;
+    width: 277px;
+    height: 66px;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 4px gray;
+    /* ホバーアニメーションの速度 */
+    transition: 0.3s;
+    margin-bottom: 50px;
+}
+.entry-button:before {
+    content: "\025b6";
+}
+.entry-button:active {
+    box-shadow: 0 0 0;
+}
+.entry-red{
+    color: #8B2022;
+    font-size: 1.2rem;
+}
+.entry-a{
+    color: inherit;
+    text-decoration: none;
+}
+.entry-space {
+    margin-bottom: 50px;
+}
+/* ---------------------------
+rink画像群
+---------------------------- */
+.link-img {
+    width: 100%;
+    height: auto;
+}
+.flex-link{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 10px;
+}
+ .more-link{
+    position: relative;
+ }
+ .link-txt{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+ }
+/* --------------------------
+silverリンク
+-------------------------- */
+.silver {
+    width: 215px;
+    margin-top: -10px;
+}
+.look {
+    text-align: right;
+    margin-top: -20px;
+    margin-bottom: 100px;
+}
+/* -----------------------
+footer
+----------------------- */
+.footer-area{
+    position: sticky;
+    top: 100vh;
+    width: 100%;
+    height: 75px;
+    line-height: 70px;
+    background-color: #9EA9B0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* TOPに戻る */
+.top-button {
+    background-color: #8B2022;
+    color: #ffffff;
+    border-radius: 100px;
+    width: 250px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+/* 前に戻る */
+#backButton {
+    float: right;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
