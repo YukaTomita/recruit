@@ -181,7 +181,7 @@
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 99;
-    max-width: 500px;
+    max-width: 550px;
 }
 .sport-popup:before {
     content: "";
@@ -269,6 +269,7 @@
 }
 .text-small{
     font-size: 0.7rem;
+    font-weight: bold;
 }
 .text-bottom{
     margin-top: auto;

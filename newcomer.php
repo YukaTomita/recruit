@@ -290,8 +290,8 @@ $conn = null;
         エンジニアとしての実務経験がなかったり、短かったりしても、取り組む姿勢は強い武器になっています。
     </div>
     <div class="gap-control-l"></div>
-    <div class="f-word-r">「求められているから頑張れる！」</div>
-    <div class="gap-control"></div>
+    <div class="f-large-r">「求められるから頑張れる！」</div>
+    <div class="gap-control-s"></div>
     <div class="sport-container">
         <div class="sport-image-container">
             <img src="img/NC1.jpg" alt="画像１" class="sport-main-image">

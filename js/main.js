@@ -1,5 +1,5 @@
 // ヘッダーを読み込み、挿入する
-fetch('/mist_recruit/include/header.html')
+fetch('/recruit/include/header.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('ヘッダーファイルを読み込めませんでした。');
@@ -15,7 +15,7 @@ fetch('/mist_recruit/include/header.html')
   });
 
 // フッターを読み込み、挿入する
-fetch('/mist_recruit/include/footer.html')
+fetch('/recruit/include/footer.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('フッターファイルを読み込めませんでした。');
