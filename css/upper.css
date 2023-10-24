@@ -24,10 +24,12 @@
     margin: 0;
 }
 .btn-white {
+    background-color: none;
     color: #fff;
     border-bottom:solid 1px #fff;
 }
 .btn-black {
+    background-color: none;
     color: #000;
     border-bottom:solid 1px #000;
 }
