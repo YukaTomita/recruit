@@ -86,13 +86,13 @@
                 <label class="flex-basis1"><span class="bolder">経験年数</span>　※必須</label>
                 <label class="flex-basis2"></label>
                 <label class="flex-basis3">
-                    <input type="radio" name="experience" value="1-2" required>
+                    <input type="radio" name="experience" value="1～2年" required>
                     <label>1～2年</label>
-                    <input type="radio" name="experience" value="2-5">
+                    <input type="radio" name="experience" value="2～5年">
                     <label>2～5年</label>
-                    <input type="radio" name="experience" value="5-10">
+                    <input type="radio" name="experience" value="5～10年">
                     <label>5～10年</label>
-                    <input type="radio" name="experience" value="10+">
+                    <input type="radio" name="experience" value="10年以上">
                     <label>10年以上</label>
                 </label>
             </div>
@@ -126,9 +126,9 @@
                 <label class="flex-basis1"><span class="bolder">希望面談形式</span>　※必須</label>
                 <label class="flex-basis2"></label>
                 <label class="flex-basis3">
-                    <input type="radio" name="interview" value="senko" required>
+                    <input type="radio" name="interview" value="選考面談" required>
                     <label>選考面談</label>
-                    <input type="radio" name="interview" value="casual">
+                    <input type="radio" name="interview" value="カジュアル面談">
                     <label>カジュアル面談</label>
                 </label>
             </div>
@@ -168,7 +168,7 @@
         <div class="entry-wrap">
             <div class="form-row">
                 <span class="bolder">備考欄　</span>
-                    <textarea></textarea>
+                    <textarea name="message"></textarea>
             </div>
             <div class="gap-control"></div>
 
@@ -240,7 +240,7 @@
                 電話：03-3526-7271（平日10：00～18：00）</div>
             <div class="gap-control-s"></div>
 
-            <button id="entryButton" class="btn2" disabled>エントリー</button>
+            <button type="submit" id="entryButton" class="btn2" disabled>エントリー</button>
         </div> 
         <div class="gap-control-l"></div>
     </form>
