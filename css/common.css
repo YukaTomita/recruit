@@ -160,6 +160,12 @@ a{
     display: flex;
     margin: 0 20px 0 20px;
 }
+.flex-txt-b{
+    margin-top: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 
 /* ---------------------
 header
