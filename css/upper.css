@@ -24,13 +24,15 @@
     margin: 0;
 }
 .btn-white {
-    background-color: none;
+    background-color: transparent;
     color: #fff;
+    border: none;
     border-bottom:solid 1px #fff;
 }
 .btn-black {
-    background-color: none;
+    background-color: transparent;
     color: #000;
+    border: none;
     border-bottom:solid 1px #000;
 }
 .flex-img button:before {
@@ -65,7 +67,7 @@
   padding: 0;
   text-align: left;
   font-size: 1rem;
-  line-height: 1.1rem;
+  line-height: 1.5rem;
 }
   .poptitle{
     margin-top: 25px;
@@ -74,10 +76,12 @@
   }
   .poptxt{
     margin-top: 25px;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     text-align: left;
   }
   .popup .close-button {
+    background-color: transparent;
+    border: none;
     position: absolute;
     bottom: 15px;
     right: 10px;
