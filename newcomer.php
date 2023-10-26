@@ -370,7 +370,7 @@ $conn = null;
                 <p class="text-small">アプリケーション開発エンジニア</p>
                 <p class="f-title text-left">岡崎</p>
             </li>
-            <div class="text-center text-bottom"><a href="upperclassman.html">先輩たちをもっと見る →</a></div>
+            <div class="text-center text-bottom"><a href="upperclass.html">先輩たちをもっと見る →</a></div>
         </ul>
     </div> 
 </div>
