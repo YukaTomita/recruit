@@ -50,7 +50,7 @@
 </div>    
     <div class="gap-control"></div>
     <!--入力項目-->
-    <form action="../entry/submit.php" method="POST">
+    <form action="../entry/confirm.php" method="POST">
 
         <div class="entry-wrap">
             <div class="form-row">
@@ -176,9 +176,10 @@
 
             <div class="upload">
                 <p class="upload-txt">履歴書/職務経歴書</p>
-                <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.xls,.xlsx" multiple style="display: none;">
-                <button id="uploadButton" style="background: none; border: none;">
-                    <img class="upload-btn" src="../img/upload.png">
+                <input name="input_file" type="file" id="fileInput" accept=".pdf,.doc,.docx,.xls,.xlsx" multiple style="display: none;">
+                <button class="upload-Button" id="uploadButton">
+                    <img class="uploadbtn" src="../img/upload.png">
+                    <span class="btn-txt">アップロード</span>
                 </button>
                 <div id="selectedFiles"></div>
             </div>
@@ -233,7 +234,7 @@
             <div class="btn-txt">上記の個人情報の取り扱いに</div>
             <img class="privacy-mark" src="../img/privacy.png">
             <div class="gap-control-s"></div>
-            <button id="agreeButton" class="btn1">同意する</button>
+            <button name="" id="agreeButton" class="btn1">同意する</button>
 
             <div class="gap-control-s"></div>
             <div class="btn-txt">本フォームから送信できない場合<br>またはお急ぎの場合は、下記の電話番号にお問い合わせください。<br><br>

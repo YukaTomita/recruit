@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. 入力されたDATAを取得
@@ -10,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $interview = $_POST["interview"];
     $role = $_POST["role"];
     $message = $_POST["message"];
-
     
     // 3. スキルチェックシートの処理
     // スキルチェックシートは別の方法で取得する必要があります。
@@ -18,11 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // 4. アップロードされたファイルを取得
     if (isset($_FILES['uploaded_file'])) {
-        $file_name = $_FILES['uploaded_file']['name'];
-        $file_tmp = $_FILES['uploaded_file']['tmp_name'];
-        // ファイルを保存するディレクトリへの処理を追加
+        $filename = $_FILES['uploaded_file']['name'];
+        $tempPath = $_FILES['uploaded_file']['tmp_name'];
+        $fileSize = $_FILES['uploaded_file']['size'];
+        $fileType = $_FILES['uploaded_file']['type'];
     }
-    
+
+
     // フォームデータの処理を続行
     // データベースへの保存やメールの送信などのアクションを追加
     
@@ -81,12 +83,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="f-word-b">面談形式：<?php echo htmlspecialchars($interview, ENT_QUOTES, 'UTF-8'); ?></div>
         <div class="f-word-b">希望種別：<?php echo htmlspecialchars($role, ENT_QUOTES, 'UTF-8'); ?></div>
         <div class="f-word-b">備考：<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></div>
-    </table>
+        <div class="f-word-b">添付ファイル：<?php echo readfile($_FILES['uploaded_file']['name']); ?></div>
     <form method="post" action="send.php">
-        <input type="hidden" name="name" value="<?php echo $name; ?>">
+        <input type="hidden" name="name" value="<?php echo htmlspecialchars($last_name . ' ' . $first_name); ?>"> 
+        <input type="hidden" name="kananame" value="<?php echo htmlspecialchars($klast_name . ' ' . $kfirst_name); ?>">
+        <input type="hidden" name="experience" value="<?php echo htmlspecialchars($klast_name . ' ' . $kfirst_name); ?>">
         <input type="hidden" name="email" value="<?php echo $email; ?>">
+        <input type="hidden" name="interview" value="<?php echo $interview; ?>">
+        <input type="hidden" name="role" value="<?php echo $role; ?>">
         <input type="hidden" name="message" value="<?php echo $message; ?>">
         <input type="submit" value="送信">
+    <?php
+        $records = []; // レコードを格納する配列を初期化
+
+        if (isset($_FILES['uploaded_file']) && $_FILES['uploaded_file']['error'] === UPLOAD_ERR_OK) {
+            $file = new SplFileObject($_FILES['uploaded_file']['tmp_name'], 'r');
+            $file->setFlags(SplFileObject::READ_CSV);
+
+            foreach ($file as $row) {
+                if (!empty($row)) { // 空の行をスキップ
+                    $records[] = $row;
+                }
+            }
+        }
+
+        // $records 配列には、CSVファイルの各レコードが格納されています。
+    ?>
         <button type="button" onclick="history.back()">戻る</button>
     </form>
 </div>

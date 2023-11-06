@@ -141,5 +141,5 @@ document.getElementById('entryButton').addEventListener('click', function() {
   const jsonData = JSON.stringify(formData);
 
   // confirm.phpに遷移
-  window.location.href = "../entry/confirm.php?data=" + encodeURIComponent(jsonData);
+  window.location.href = "../entry/submit.php?data=" + encodeURIComponent(jsonData);
 });
