@@ -89,57 +89,42 @@ selectedFilesContainer.addEventListener('click', (event) => {
 });
 
 
+//iframeデータ内容の取得
+function sendSelectedData() {
+    // 選択されたセル情報を配列に格納
+    var selectedCells = [];
+    var cells = document.querySelectorAll('td[data-language][data-level]');
+    cells.forEach(function (cell) {
+        var language = cell.getAttribute('data-language');
+        var level = cell.getAttribute('data-level');
+        var experience = cell.nextElementSibling.querySelector('input[type="radio"]:checked');
+        if (experience) {
+            experience = experience.value;
+            selectedCells.push({ language, level, experience });
+        }
+    });
 
-//入力項目を取得
-document.getElementById('entryButton').addEventListener('click', function() {
-  // お名前（漢字）
-  const lastNameKanji = document.querySelector('input[name="last-name"][placeholder="みすと"]').value;
-  const firstNameKanji = document.querySelector('input[name="first-name"][placeholder="太郎"]').value;
+    // 選択されたセル情報を JSON 形式に変換
+    var selectedCellsJSON = JSON.stringify(selectedCells);
 
-  // フリガナ（全角カタカナ）
-  const lastNameKana = document.querySelector('input[name="klast-name"][placeholder="ミスト"]').value;
-  const firstNameKana = document.querySelector('input[name="kfirst-name"][placeholder="タロウ"]').value;
+    // フォームを作成し、データを送信
+    var form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'confirm.php';
 
-  // 経験年数
-  const experience = document.querySelector('input[name="experience"]:checked').value;
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'selectedCells';
+    input.value = selectedCellsJSON;
 
-  // メールアドレス
-  const email = document.querySelector('input[name="email"]').value;
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+}
 
-  // 再入力（メールアドレス）再入力項目は取得不要
-  // const confirmEmail = document.querySelector('input[name="confirm-email"]').value;
+// 送信ボタンがクリックされたときにデータを送信
+var submitButton = document.getElementById('submit-button');
+submitButton.addEventListener('click', sendSelectedData);
 
-  // 希望面談形式
-  const interviewType = document.querySelector('input[name="interview"]:checked').value;
 
-  // 希望種別
-  const role = document.querySelector('input[name="role"]:checked').value;
 
-  // スキルシートのiframe内スクリプトからスキルデータを取得
-  const parentframe = document.getElementById('parentframe');
-  const skillData = parentframe.contentWindow.getSkillData(); // 仮の関数名
-
-  // 備考欄
-  const notes = document.querySelector('textarea').value;
-
-  // フォームデータをオブジェクトにまとめる
-  const formData = {
-    lastNameKanji,
-    firstNameKanji,
-    lastNameKana,
-    firstNameKana,
-    experience,
-    email,
-    // confirmEmail, (Mail再入力)
-    interviewType,
-    role,
-    skillData,
-    notes
-  };
-
-  // フォームデータをJSON形式に変換
-  const jsonData = JSON.stringify(formData);
-
-  // confirm.phpに遷移
-  window.location.href = "../entry/submit.php?data=" + encodeURIComponent(jsonData);
-});

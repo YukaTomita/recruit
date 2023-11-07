@@ -1,24 +1,15 @@
 <?php session_start(); ?>
 <?php 
-//添付ファイルアップロード
-$filename = $_FILES['input_file']['name'];
-$uploaded_path = 'attachment/'.$filename;
-move_uploaded_file($_FILES['input_file']['tmp_name'],$uploaded_path);
-
-$_SESSION['input_file'] = $filename;
-
-        // フォームから送信されたデータを各変数に格納
-        $last_name = $_POST["last-name"];
-        $first_name = $_POST["first-name"];
-        $klast_name = $_POST["klast-name"];
-        $kfirst_name = $_POST["kfirst-name"];
-        $experience = $_POST["experience"];
-        $email = $_POST["email"];
-        $interview = $_POST["interview"];
-        $role = $_POST["role"];
-        $input_file = $POST["input_file"]["name"];
-        $message = $_POST["message"];
-        $agree  = $_POST["agree"];
+    // フォームから送信されたデータを各変数に格納
+    $last_name = $_POST["last-name"];
+    $first_name = $_POST["first-name"];
+    $klast_name = $_POST["klast-name"];
+    $kfirst_name = $_POST["kfirst-name"];
+    $experience = $_POST["experience"];
+    $email = $_POST["email"];
+    $interview = $_POST["interview"];
+    $role = $_POST["role"];
+    $message = $_POST["message"];
 
     // 送信ボタンが押されたら
     if (isset($_POST["submit"])) {
@@ -88,13 +79,6 @@ $body = "--__BOUNDARY__\n";
 $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
 $body .= $admin_reply_text . "\n";
 $body .= "--__BOUNDARY__\n";
-
-// ファイルを添付
-$filename = $_POST['input_file'];
-// if(mb_detect_encoding($filename,"UTF-8",true) === false){
-//     $filename = mb_convert_encoding($filename,"UTF-8","SJIS");
-// }
-// $filename = basename( mb_encode_mimeheader(  $filename ));
 $body .= "Content-Type: application/octet-stream; name= \"recruit-".date('Y-m-d').".pdf\"\n";  
 $body .= "Content-Disposition: attachment; filename= \"recruit-".date('Y-m-d').".pdf\"\n";
 $body .= "Content-Transfer-Encoding: base64\n";
@@ -104,9 +88,9 @@ $body .= "--__BOUNDARY__--";
 
 // 管理者確認用メール送信
 if(mb_send_mail( 'r_pr@mistnet.co.jp', $admin_reply_subject, $body, $header)){
-    header("Location: thanks.php");
+    header("Location: ../entry/thanks.php");
 } else {
-    header("Location: failure.php");
+    header("Location: ../entry/failure.php");
 }
     exit;
 }
@@ -124,14 +108,13 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-159140072-1');
 </script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>ENTRY確認</title>
-    <meta name="keywords" content="株式会社ミストソリューション,ミストソリューション,採用情報,recruite,MISTsolution"/>
-    <meta name="description" content="MISTsolutionRecruit - ENTRY確認">
-    <meta name="copyright" content="Copyright (C) 株式会社ミストソリューション." />
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>ENTRY確認</title>
+<meta name="keywords" content="株式会社ミストソリューション,ミストソリューション,採用情報,recruite,MISTsolution"/>
+<meta name="description" content="MISTsolutionRecruit - ENTRY確認">
+<meta name="copyright" content="Copyright (C) 株式会社ミストソリューション." />
 <!-- OGP -->
 <meta property="og:url" content="https://www.mistnet.co.jp">
 <meta property="og:title" content="株式会社MISTsolution Recruit | WEBサイト"/>
@@ -179,8 +162,6 @@ gtag('config', 'UA-159140072-1');
     <input type="hidden" name="interview" value="<?php echo $interview; ?>">
     <input type="hidden" name="role" value="<?php echo $role; ?>">
     <input type="hidden" name="message" value="<?php echo $message; ?>">
-    <input type="hidden" name="input_file" value="<?php echo $_FILES["input_file"]["name"]; ?>">
-    <input type="hidden" name="agree" value="<?php echo $agree; ?>">
         <div class="entry-wrap">
             <div class="form-row">
                 <div class="bullet-point"></div>
@@ -220,9 +201,53 @@ gtag('config', 'UA-159140072-1');
             </div>
             <div class="form-row">
                 <div class="bullet-point"></div>
+                <label class="flex-basis1">スキルシート</label>
+                <label class="flex-basis2"></label>
+                <label class="flex-basis3">
+                <?php
+
+if (isset($_FILES['input_file']) && $_FILES['input_file']['error'] === UPLOAD_ERR_OK) {
+    // アップロード成功の処理
+ } else {
+    echo "ファイルのアップロードに失敗しました。<br>";
+    echo "エラーコード: " . $_FILES['input_file']['error'] . "<br>";
+ }
+ 
+                    ?>
+                </label>
+                </div>
+            <div class="form-row">
+                <div class="bullet-point"></div>
                 <label class="flex-basis1">添付ファイル</label>
                 <label class="flex-basis2"></label>
-                <label class="flex-basis3"><?php echo $filename ?></label>
+                <label class="flex-basis3">
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        // ファイルがアップロードされた場合
+                        if (isset($_FILES['input_file']) && $_FILES['input_file']['error'] === UPLOAD_ERR_OK) {
+                            $uploadedFile = $_FILES['input_file']['tmp_name'];
+                            
+                            // アップロードされたファイルの情報を表示
+                            echo  $_FILES['input_file']['name'];
+
+                            // ファイルを指定のディレクトリに移動する
+                            $targetDirectory = 'C:\xampp\htdocs\mist_recruit\test'; // 保存先のディレクトリを指定
+                            $targetFile = $targetDirectory . $_FILES['input_file']['name'];
+
+                            // ファイルを指定のディレクトリに移動
+                            if (move_uploaded_file($uploadedFile, $targetFile)) {
+                                // ここで確認画面に表示するか、その他の処理を行います。
+                            } else {
+                                echo "ファイルの移動に失敗しました。<br>";
+                            }
+                        } else {
+                            echo "ファイルのアップロードに失敗しました。<br>";
+                        }
+                    } else {
+                        echo "無効なリクエストです。<br>";
+                    }
+                ?>
+                </label>
             </div>
             <div class="form-row">
                 <div class="bullet-point"></div>
@@ -234,7 +259,7 @@ gtag('config', 'UA-159140072-1');
                 <div class="bullet-point"></div>
                 <label class="flex-basis1">個人情報の取り扱いについて</label>
                 <label class="flex-basis2"></label>
-                <label class="flex-basis3"><?php echo nl2br($agree); ?></label>
+                <label class="flex-basis3">同意する</label>
             </div>
             <div class="gap-control-s"></div>
             <button type="submit" class="send-button" name="submit">送信する</button>
@@ -245,33 +270,6 @@ gtag('config', 'UA-159140072-1');
 </section>
 </div><!-- wrapper div -->
 
-<!--TOPに戻るボタン-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-<script>
-  $(function () {
-     /** ページトップ処理 **/
-     // スクロールした場合
-     $(window).scroll(function() {
-         // スクロール位置が100を超えた場合
-         if ($(this).scrollTop() > 100) {
-             $('#pagetop').fadeIn();
-         } else {
-             // ページトップへをフェードアウト
-             $('#pagetop').fadeOut();
-         }
-     });
-  
-     // ページトップクリック
-     $('#pagetop').click(function() {
-         // ページトップへスクロール
-         $('html, body').animate({
-             scrollTop: 0
-         }, 300);
-         return false;
-     });
-  });
-  </script>
-  <!--TOPに戻るボタンここまで-->
 <!--共通部読み込み-->
 <!-- footer -->
 <div class="footer-area">

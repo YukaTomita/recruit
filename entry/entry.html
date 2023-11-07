@@ -50,7 +50,7 @@
 </div>    
     <div class="gap-control"></div>
     <!--入力項目-->
-    <form action="../entry/confirm.php" method="POST">
+    <form action="../entry/confirm.php" method="POST" enctype="multipart/form-data">
 
         <div class="entry-wrap">
             <div class="form-row">
@@ -182,6 +182,23 @@
                     <span class="btn-txt">アップロード</span>
                 </button>
                 <div id="selectedFiles"></div>
+                <script>
+                    // type="file"の<input>タグ
+                    const input = document.getElementById('input_file');
+                    // 値に変更があった場合
+                    input.addEventListener('change', function() {
+                        // FileReaderでファイルを読み込む
+                        const reader = new FileReader();
+                        // 読み込みが完了したら、<img>タグで表示
+                        reader.onload = function() {
+                            const img = document.createElement('img');
+                            img.src = reader.result;
+                            document.body.appendChild(img);
+                        };
+                        // 選択された1つ目のファイルをData URLとして読み込む
+                        reader.readAsDataURL(input.files[0]);
+                    });
+                </script>
             </div>
 
             <div class="gap-control-l"></div>

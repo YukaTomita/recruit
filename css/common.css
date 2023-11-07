@@ -96,6 +96,14 @@ a{
     height: auto;
     vertical-align: bottom;
 }
+
+@media screen and (max-width: 480px) {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
 /*----------------
      背景色
 ----------------*/
@@ -169,6 +177,16 @@ a{
 /* ---------------------
 header
 ---------------------- */
+@media screen and (max-width: 768px) {
+    /* スマートフォン用のスタイル */
+    header {
+      width: 50%;
+    }
+    .header-entry{
+        width: 30%;
+    }
+  }
+  
 .header {
     position: fixed;
     background-color: white;
@@ -362,6 +380,18 @@ rink画像群
     right: 10px;
     color: white;
  }
+
+/* スマートフォン用のスタイル（画面幅が 767px 以下） */
+@media (max-width: 767px) {
+    .flex-link {
+        display: block; /* 1列に表示 */
+        margin: 10px 0;
+    }
+    .more-link {
+        width: 100%; /* 横幅を100%に設定して一列に表示 */
+    }
+}
+
 /* --------------------------
 silverリンク
 -------------------------- */
