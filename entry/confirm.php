@@ -95,13 +95,8 @@ if(mb_send_mail( 'r_pr@mistnet.co.jp', $admin_reply_subject, $body, $header)){
     exit;
 }
 ?>
-
-
 <html>
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159140072-1"></script>
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -127,7 +122,6 @@ gtag('config', 'UA-159140072-1');
 <meta name="twitter:card" content="summary"/>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link rel="stylesheet" href="../css/entry.css" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -204,18 +198,28 @@ gtag('config', 'UA-159140072-1');
                 <label class="flex-basis1">スキルシート</label>
                 <label class="flex-basis2"></label>
                 <label class="flex-basis3">
-                <?php
 
-if (isset($_FILES['input_file']) && $_FILES['input_file']['error'] === UPLOAD_ERR_OK) {
-    // アップロード成功の処理
- } else {
-    echo "ファイルのアップロードに失敗しました。<br>";
-    echo "エラーコード: " . $_FILES['input_file']['error'] . "<br>";
- }
- 
-                    ?>
-                </label>
-                </div>
+                <?php
+        // POST リクエストからスキル情報を取得
+        if (isset($_POST['language'])) {
+            $languages = $_POST['language'];
+            $levels = $_POST['level'];
+            $experiences = $_POST['experience'];
+
+            // ループを使用してデータを表示
+            $numSkills = count($languages);
+            for ($i = 0; $i < $numSkills; $i++) {
+                $language = $languages[$i];
+                $level = isset($levels[$i]) ? $levels[$i] : "未入力";
+                $experience = isset($experiences[$i]) ? $experiences[$i] : "未入力";
+
+                echo "言語: " . $language . "　" . "レベル: " . $level . "　" . "経験: " . $experience . "<br>";
+            }
+        } else {
+            echo "スキル情報が未入力です。";
+        }
+        ?>                </label>
+            </div>
             <div class="form-row">
                 <div class="bullet-point"></div>
                 <label class="flex-basis1">添付ファイル</label>
@@ -270,7 +274,6 @@ if (isset($_FILES['input_file']) && $_FILES['input_file']['error'] === UPLOAD_ER
 </section>
 </div><!-- wrapper div -->
 
-<!--共通部読み込み-->
 <!-- footer -->
 <div class="footer-area">
     <small>&copy; 1997,2023 mistsolution.All Rights Reserved.</small>
