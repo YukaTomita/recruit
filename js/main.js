@@ -14,6 +14,22 @@ fetch('/recruit/include/header.html')
     console.error(error);
   });
 
+// エントリーエリアを読み込み、挿入する
+fetch('/recruit/include/entry-space.html')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('エントリースペースを読み込めませんでした。');
+    }
+    return response.text();
+  })
+  .then(headerHTML => {
+    const header = document.querySelector('#entry-space');
+    header.insertAdjacentHTML('afterbegin', headerHTML);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 // フッターを読み込み、挿入する
 fetch('/recruit/include/footer.html')
   .then(response => {

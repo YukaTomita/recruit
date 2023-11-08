@@ -431,6 +431,7 @@ $conn = null;
     </div>
     <div class="gap-control"></div>
 </div>
+<div id="entry-space"></div>
 </main>
 <!--footer-->
 <footer id="footer"></footer>

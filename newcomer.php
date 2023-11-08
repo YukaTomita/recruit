@@ -374,6 +374,7 @@ $conn = null;
         </ul>
     </div> 
 </div>
+<div id="entry-space"></div>
 </main>
 <!--footer-->
 <footer id="footer"></footer>
