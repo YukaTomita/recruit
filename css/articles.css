@@ -55,11 +55,11 @@
     color: #000;
 }
 .more-link {
+    width: 100px;
     text-align: center;
     text-decoration: none;
     color: #000;
 }
-
 
 #backButton {
     float: right;
@@ -67,17 +67,34 @@
 
 /* 既存のスタイル */
 .article-list {
+    margin: auto;
+    max-width: 500px;
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
 }
 
-.article {
-    width: 100%;
+.article-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.article-date {
+    width: 80px;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.article-title {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin-right: 15px;
 }
 
 .article-image {
@@ -97,18 +114,6 @@
     justify-content: space-between;
 }
 
-.article-date {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    text-align: left;
-}
-
-.article-title {
-    margin: 0;
-    font-size: 1.5rem;
-    text-align: left;
-    margin-bottom: 15px;
-}
 .read-more {
     text-decoration: none;
     color: #000;

@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
     <link rel="icon" href="../../img/favicon.ico">    
-    <title>WHAT NEWS</title>
+    <title>WHAT NEWS | ニュース</title>
     <!--css-->
     <link rel="stylesheet" href="../../css/reset.css" type="text/css">
     <link rel="stylesheet" href="../../css/common.css" type="text/css">
@@ -67,13 +67,14 @@
     </div>
     <div class="gap-control"></div>
     <button id="backButton">← 前のページに戻る</button>
+    <script>
+        document.getElementById("backButton").addEventListener("click", function() {
+        history.back();
+    });
+    </script>   
 </div>
+</main>
 <!--footer-->
 <footer id="footer"></footer>
-<script>
-    document.getElementById("backButton").addEventListener("click", function() {
-    history.back();
-});
-</script>
 </body>
 </html>

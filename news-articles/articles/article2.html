@@ -1,17 +1,3 @@
-<?php
-  $articlesData = file_get_contents('article_list.json');
-  $articles = json_decode($articlesData)->articles;
-
-  $perPage = 20; // Number of articles per page
-  $totalPages = ceil(count($articles) / $perPage); // Calculate total pages
-
-  // Get page number from query string, default to 1
-  $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
-
-  // Calculate the starting and ending index for the current page
-  $startIndex = ($currentPage - 1) * $perPage;
-  $endIndex = min($startIndex + $perPage - 1, count($articles) - 1);
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -33,12 +19,12 @@
     <meta property="og:image" content="assets/img/mist-ogp.jpg">
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
-    <link rel="icon" href="../img/favicon.ico">    
+    <link rel="icon" href="../../img/favicon.ico">    
     <title>WHAT NEWS</title>
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../css/articles.css" type="text/css">
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../../css/common.css" type="text/css">
+    <link rel="stylesheet" href="../../css/articles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/main.js"></script>
 </head>
@@ -65,45 +51,23 @@
             <li class="breadcrumbs-li"><a href="../index.html">TOP</a></li>
             <li class="breadcrumbs-li"><a href="#!"></a>お知らせ</li>
             <li class="breadcrumbs-li"><a href="#!"></a>履歴</li>
+            <li class="breadcrumbs-li">2023.00.00</li>
         </ul>
     </nav>
     <div class="gap-control-s"></div>
-    <!--コンテンツ内容-->
-    <div class="text-left f-word-b">過去一覧</div>
+<!--コンテンツ内容-->
+    <div class="f-title text-left">2023.00.00</div>
+    <div class="f-title text-left">テキストテキストのお知らせ</div>
     <div class="gap-control-s"></div>
-    <!--記事一覧-->
-    <ul class="article-list">
-        <?php
-            $articlesPerPage = 20; // 1ページあたりの記事数
-            $startIndex = ($currentPage - 1) * $articlesPerPage;
-            $endIndex = min($startIndex + $articlesPerPage - 1, count($articles) - 1);
-
-            for ($i = $startIndex; $i <= $endIndex; $i++) {
-                $article = $articles[$i];
-                echo '<li class="article-item">';
-                echo '<div class="article-date">' . date('Y.m.d', strtotime($article->date)) . '</div>';
-                echo '<div class="article-title">' . $article->title . '</div>';
-                echo '<a href="' . $article->url . '" class="more-link">もっと見る &gt;</a>';
-                echo '</li>';
-            }
-        ?>
-    </ul>
-    <div class="gap-control"></div>
-    <!-- Pager -->
-    <div class="pager">
-        <?php
-        echo '<a href="?page=' . max($currentPage - 1, 1) . '">＜</a> '; // Previous page link
-
-        for ($page = 1; $page <= $totalPages; $page++) {
-            echo '<a href="?page=' . $page . '" class="' . ($page === $currentPage ? 'current' : '') . '">' . $page . '</a> ';
-        }
-
-        echo '<a href="?page=' . min($currentPage + 1, $totalPages) . '">＞</a>'; // Next page link
-        ?>
+<!-- テキスト内容-->
+    <div class="f-word-b text-left">テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
     </div>
+    <div class="gap-control"></div>
+    <button id="backButton">← 前のページに戻る</button>
 </div>
-<div class="gap-control-l"></div>
-
 <!--footer-->
 <footer id="footer"></footer>
 <script>
@@ -112,4 +76,4 @@
 });
 </script>
 </body>
-</html>    
+</html>
