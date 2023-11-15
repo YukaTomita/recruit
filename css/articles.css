@@ -66,6 +66,14 @@
   }
 
 /* 既存のスタイル */
+.article{
+    margin: auto;
+    max-width: 500px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
 .article-list {
     margin: auto;
     max-width: 500px;

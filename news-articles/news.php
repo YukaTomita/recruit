@@ -33,14 +33,15 @@
     <meta property="og:image" content="assets/img/mist-ogp.jpg">
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
-    <link rel="icon" href="../img/favicon.ico">    
+    <link rel="icon" href="img/favicon.ico">    
     <title>WHAT NEWS</title>
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../css/articles.css" type="text/css">
+    <base href="/recruit/">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/articles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <!--header-->
@@ -62,7 +63,7 @@
 <div class="wrapper">
     <nav>
         <ul class="breadcrumbs">
-            <li class="breadcrumbs-li"><a href="../index.html">TOP</a></li>
+            <li class="breadcrumbs-li"><a href="index.html">TOP</a></li>
             <li class="breadcrumbs-li"><a href="#!"></a>お知らせ</li>
             <li class="breadcrumbs-li"><a href="#!"></a>履歴</li>
         </ul>

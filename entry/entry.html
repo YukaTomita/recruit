@@ -19,14 +19,15 @@
     <meta property="og:image" content="assets/img/mist-ogp.jpg">
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
-    <link rel="icon" href="../img/favicon.ico">    
+    <link rel="icon" href="img/favicon.ico">    
     <title>エントリー</title>
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../css/entry.css" type="text/css">
+    <base href="/recruit/">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/entry.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </head>
 <body>
@@ -50,7 +51,7 @@
 </div>    
     <div class="gap-control"></div>
     <!--入力項目-->
-    <form action="../entry/confirm.php" method="POST" enctype="multipart/form-data">
+    <form action="entry/confirm.php" method="POST" enctype="multipart/form-data">
 
         <div class="entry-wrap">
             <div class="form-row">
@@ -160,7 +161,7 @@
         </div>
         <!-- skill check -->
         <div class="skill-wrap">
-            <iframe id="parentframe" frameborder="0" src="../entry/skill-sheet.html"></iframe>
+            <iframe id="parentframe" frameborder="0" src="entry/skill-sheet.html"></iframe>
         </div>
         
         <div class="gap-control"></div>
@@ -178,7 +179,7 @@
                 <p class="upload-txt">履歴書/職務経歴書</p>
                 <input name="input_file" type="file" id="fileInput" accept=".pdf,.doc,.docx,.xls,.xlsx" multiple style="display: none;">
                 <button class="upload-Button" id="uploadButton">
-                    <img class="uploadbtn" src="../img/upload.png">
+                    <img class="uploadbtn" src="img/upload.png">
                     <span class="btn-txt">アップロード</span>
                 </button>
                 <div id="selectedFiles"></div>
@@ -249,7 +250,7 @@
             <div class="gap-control-s"></div>
             <!-- 同意する -->
             <div class="btn-txt">上記の個人情報の取り扱いに</div>
-            <img class="privacy-mark" src="../img/privacy.png">
+            <img class="privacy-mark" src="img/privacy.png">
             <div class="gap-control-s"></div>
             <button name="" id="agreeButton" class="btn1">同意する</button>
 
@@ -267,7 +268,7 @@
 <footer id="footer">
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<sctipt src="../js/entry.js"></sctipt>
+<sctipt src="js/entry.js"></sctipt>
 <script>
     const uploadButton = document.getElementById('uploadButton');
 const fileInput = document.getElementById('fileInput');

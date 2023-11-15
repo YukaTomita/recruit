@@ -1,6 +1,5 @@
-// HEADER JS //
 // ヘッダーを読み込み、挿入する
-fetch('/recruit/include/header.html')
+fetch('./include/header.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('ヘッダーファイルを読み込めませんでした。');
@@ -10,31 +9,48 @@ fetch('/recruit/include/header.html')
   .then(headerHTML => {
     const header = document.querySelector('#header');
     header.insertAdjacentHTML('afterbegin', headerHTML);
+
+    // 画像のパスを設定
+    const imgPath = './img/';
+    const logoImg = header.querySelector('.logo');
+    if (logoImg) {
+      logoImg.src = imgPath + 'mist_logo.png';
+    }
   })
   .catch(error => {
     console.error(error);
   });
 
-// ENTRY JS //
 // エントリーエリアを読み込み、挿入する
-fetch('/recruit/include/entry-space.html')
+fetch('./include/entry-space.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('エントリースペースを読み込めませんでした。');
     }
     return response.text();
   })
-  .then(headerHTML => {
-    const header = document.querySelector('#entry-space');
-    header.insertAdjacentHTML('afterbegin', headerHTML);
+  .then(entryHTML => {
+    // 画像のパスを設定
+    const imgPath = './img/';
+    const entryImg = document.querySelector('#entry-space .more-img');
+
+    if (entryImg) {
+      entryImg.src = imgPath + 'link1.png';
+    }
+
+    const entrySpace = document.querySelector('#entry-space');
+    if (entrySpace) {
+      entrySpace.insertAdjacentHTML('afterbegin', entryHTML);
+    } else {
+      console.error('エントリースペースの要素が見つかりません。');
+    }
   })
   .catch(error => {
     console.error(error);
   });
 
-// FOOTER JS //
 // フッターを読み込み、挿入する
-fetch('/recruit/include/footer.html')
+fetch('./include/footer.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('フッターファイルを読み込めませんでした。');
@@ -43,20 +59,7 @@ fetch('/recruit/include/footer.html')
   })
   .then(footerHTML => {
     const footer = document.querySelector('#footer');
-    footer.insertAdjacentHTML('beforeend', footerHTML);
-
-    // コンテンツが少ないときに最下部に固定するためのコードを追加
-    const pageContent = document.querySelector('#content'); // ページのコンテンツ要素に対応するセレクタを使用
-    const windowHeight = window.innerHeight;
-    const contentHeight = pageContent.offsetHeight;
-
-    if (contentHeight < windowHeight) {
-      // コンテンツがウィンドウの高さよりも小さい場合、フッターを最下部に固定
-      footer.style.position = 'fixed';
-      footer.style.bottom = '0';
-      footer.style.left = '0';
-      footer.style.right = '0';
-    }
+    footer.insertAdjacentHTML('afterbegin', footerHTML);
   })
   .catch(error => {
     console.error(error);

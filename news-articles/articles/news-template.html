@@ -19,14 +19,15 @@
     <meta property="og:image" content="assets/img/mist-ogp.jpg">
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
-    <link rel="icon" href="../../img/favicon.ico">    
+    <link rel="icon" href="img/favicon.ico">    
     <title>WHAT NEWS | ニュース</title>
     <!--css-->
-    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../../css/articles.css" type="text/css">
+    <base href="/recruit/">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/articles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <!--header-->
@@ -67,16 +68,15 @@
     </div>
     <div class="gap-control"></div>
     <button id="backButton">← 前のページに戻る</button>
-    <script>
-        document.getElementById("backButton").addEventListener("click", function() {
-        history.back();
-    });
-    </script>   
+    <div class="gap-control-s"></div>
 </div>
 </main>
 <!--footer-->
-<div class="footer-area">
-    <footer id="footer"></footer>
-</div>
+<footer id="footer"></footer>
+<script>
+    document.getElementById("backButton").addEventListener("click", function() {
+    history.back();
+});
+</script>   
 </body>
 </html>
