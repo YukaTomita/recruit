@@ -28,6 +28,9 @@ a{
 .text-bottom{
     align-items: flex-end;
 }
+.t-justify{
+    text-align: justify;
+}
 
 /*---------------- 
     フォント
@@ -334,16 +337,8 @@ body.noscroll{
     width: 277px;
     height: 66px;
     font-size: 1.5rem;
-    box-shadow: 2px 2px 4px gray;
-    /* ホバーアニメーションの速度 */
-    transition: 0.3s;
     margin-bottom: 50px;
-}
-.entry-button:before {
-    content: "\025b6";
-}
-.entry-button:active {
-    box-shadow: 0 0 0;
+    border: none; 
 }
 .entry-red{
     color: #8B2022;

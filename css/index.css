@@ -428,7 +428,7 @@
 .youtube-child {
   flex: 0 0 calc(25% - 20px);
   position: relative;
-  width: 300px;
+  width: 280px;
   height: auto;
   margin-right: 25px; /* 動画の間隔 */
 }
