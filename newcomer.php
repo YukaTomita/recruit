@@ -165,12 +165,13 @@ $conn = null;
     <div class="gap-control-s"></div>
     <p class="f-title">質問</p>
     <hr class="border-line">
-    <p class="f-word-r">「あなたの好きなスポーツは何ですか？」</p>
+    <div class="gap-control-s"></div>
+    <p class="f-word-r">あなたの好きなスポーツは何ですか？</p>
     <div class="gap-control-s"></div>
 
 <!--Ranking Zone-->
     <div id="updateStatus">
-        <div class="update-vote f-title">上位5つを更新中<span id="dots">...</span></div>
+        <div class="update-vote f-black wide-f">上位5つを更新中<span id="dots">...</span></div>
     </div>
     <script>
         // 点滅を制御する関数
@@ -190,18 +191,19 @@ $conn = null;
         // 500ミリ秒ごとにtoggleDots関数を呼び出すタイマー
         setInterval(toggleDots, 500);
     </script>
-    <?php
-        if ($lastVotingDateTime) {
-            // 最終投票日時を指定のフォーマットに変換して表示
-            $formattedLastVotingDate = date('更新：Y.m.d', strtotime($lastVotingDateTime));
-            echo $formattedLastVotingDate;
-        } else {
-            // 投票履歴がない場合の処理
-            echo "まだ投票がありません。";
-        }            
-    ?>
+    <p class="f-black wide-f">
+        <?php
+            if ($lastVotingDateTime) {
+                // 最終投票日時を指定のフォーマットに変換して表示
+                $formattedLastVotingDate = date('Y.m.d', strtotime($lastVotingDateTime));
+                echo '更新: ' . $formattedLastVotingDate;
+            } else {
+                // 投票履歴がない場合の処理
+                echo "まだ投票がありません。";
+            }            
+        ?>
+    </p>
     <div class="gap-control"></div>
-
     <p class="f-large-r">現在のランキング</p>
     <?php if (!empty($ranking) && $voteHistory) : ?>
 

@@ -63,6 +63,7 @@
         text-align: center;
     }
     .step-no{
+        padding-left: 5px;
         font-size: 4rem;
         color: #8B2022;
     }
@@ -128,6 +129,10 @@
             height: auto;
             margin-right: 10px;
         }
+        .icon-text-container p {
+            padding-top: 15px;
+            padding-left: 5px;
+        }
   
         .training-container{
             display: flex;
@@ -135,6 +140,7 @@
             align-items: center;
           }
           .training-text{
+            padding-top: 15px;
             vertical-align: middle;
             margin-left: 20px;
           }
@@ -150,7 +156,7 @@
             width : 50px;
           }
           .training3{
-            width: 400px;
+            width: 450px;
             white-space: normal;
             text-align: left;
           }
@@ -162,7 +168,7 @@
 }
 
 .evaluation {
-    max-width: 100%;
+    max-width: 90%;
     max-height: 230px;
 }
 
@@ -232,7 +238,7 @@
 display: flex;
 }
   .job1{
-    width: 10px;
+    width: 15px;
   }
   .job2{
     width : 100px;
@@ -240,6 +246,7 @@ display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align-last: justify;
+    padding: 0 5px;
   }
   .job3{
     width: 650px;
@@ -297,7 +304,8 @@ margin: 0 auto;
 }
 .font-s{
     color: #8B2022;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding-right: 5px;
 }
 .f-line{
     line-height: 1.9rem;

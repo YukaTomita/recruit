@@ -78,6 +78,7 @@
     margin: 0 auto;
     text-align: center;
     line-height: 40px;
+    border: none;
   }
 
 /* 案件・技術 */
@@ -87,7 +88,7 @@
 }
  .flex1{
     width: 70%;
-    margin: 15px;
+    margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +96,8 @@
 }
  .flex2{
     width: 30%;
-    margin: 15px;
+    padding-top: 20px;
+    margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -49,6 +49,12 @@ a{
     font-size: 1.2rem;
 }
 
+/* ブラック大き目　*/
+.f-black{
+    color: #000;
+    font-size: 1.5rem;
+}
+
 /* ボルドー小 */
 .f-word-r{
     color: #8B2022;
@@ -68,6 +74,11 @@ a{
 .f-white{
     color: white;
     font-size: 1.2rem;
+}
+
+/* font-wide */
+.wide-f{
+    font-weight: 600;
 }
 
 /*------------------

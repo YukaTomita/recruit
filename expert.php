@@ -130,10 +130,11 @@ $conn = null;
     <div class="gap-control-s"></div>
     <p class="f-title">質問</p>
     <hr class="border-line">
-    <p class="f-word-r">「キャリアアップで選ぶポイントは何ですか？」</p>
+    <div class="gap-control-s"></div>
+    <p class="f-word-r">キャリアアップで選ぶポイントは何ですか？</p>
     <div class="gap-control-s"></div>
     <div id="updateStatus">
-        <div class="update-vote f-title">エンジニアが選ぶポイントを更新中<span id="dots">...</span></div>
+        <div class="update-vote f-black wide-f">エンジニアが選ぶポイントを更新中<span id="dots">...</span></div>
     </div>
     <script>
         // 点滅を制御する関数
@@ -155,7 +156,7 @@ $conn = null;
     </script>
     <div class="load">
         <?php if ($lastVoteDate) : ?>
-            <p class="f-title">最終投票日: <?php echo date('Y.m.d', strtotime($lastVoteDate)); ?></p>
+            <p class="f-black wide-f">最終投票日: <?php echo date('Y.m.d', strtotime($lastVoteDate)); ?></p>
             <?php else : ?>
             <p>まだ投票がありません。</p>
         <?php endif; ?>
@@ -356,9 +357,10 @@ $conn = null;
     <div class="gap-control-l"></div>
     <p class="f-title">変化する役割</p>
     <hr class="border-line">
+    <div class="gap-control-s"></div>
     <p class="f-word-r">エンジニアの「キャリア」</p>
     <div class="gap-control-s"></div>
-    <p class="f-title">これまでの経験を活かすために</p>
+    <p class="f-black wide-f">これまでの経験を活かすために</p>
     <div class="gap-control"></div>
 </div>
 
@@ -379,7 +381,7 @@ $conn = null;
 <div class="wrapper">
     <p class="f-word-r">「プロジェクト事例」</p>
     <div class="gap-control-s"></div>
-    <p class="f-title">あなたの経験を活かせるプロジェクトがあります</p>
+    <p class="f-black wide-f">あなたの経験を活かせるプロジェクトがあります</p>
     <div class="gap-control-l"></div>
     <!-- 業務内容（アプリ開発） -->
     <div>

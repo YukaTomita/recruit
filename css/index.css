@@ -65,8 +65,10 @@
   
   .slide a.button {
     position: absolute;
+    width: 50%;
     bottom: 80px;
     left: 50%;
+    text-align: center;
     transform: translateX(-50%);
     padding: 15px 20px;
     font-size: 2rem;
@@ -114,10 +116,6 @@
     font-size: 4rem;
     color: #8B2022;
 }
-.wide-num{
-    font-size: 4rem;
-    color: #8B2022;
-}
 .border-line-long{
     border-top:3px solid #8B2022;
     width:50%;
@@ -152,6 +150,7 @@
   }
 
 .font-num{
+    padding-left: 10px;
     font-size: 3rem;
     color: #8B2022;
 }
@@ -169,12 +168,12 @@
 }
 
 .reason-p {
-  line-height: 2.5rem;
-  width: 250px;
-  height: 250px;
+  line-height: 3.2rem;
+  width: 300px;
+  height: 300px;
   color: #8B2022;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   font-weight: bold;
   border: #8B2022 solid 4px;
   text-align: center;
@@ -188,7 +187,7 @@
 .center-text {
   color: #8B2022;
   line-height: 3rem;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0 20px; /* 余白の調整 */
   position: absolute;
   left: 50%;
