@@ -88,9 +88,9 @@ $body .= "--__BOUNDARY__--";
 
 // 管理者確認用メール送信
 if(mb_send_mail( 'r_pr@mistnet.co.jp', $admin_reply_subject, $body, $header)){
-    header("Location: ../entry/thanks.html");
+    header("Location: entry/thanks.html");
 } else {
-    header("Location: ../entry/failure.html");
+    header("Location: entry/failure.html");
 }
     exit;
 }
@@ -122,13 +122,14 @@ gtag('config', 'UA-159140072-1');
 <meta name="twitter:card" content="summary"/>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="../css/common.css" type="text/css">
-<link rel="stylesheet" href="../css/entry.css" type="text/css">
+<base href="/recruit/">
+<link rel="stylesheet" href="css/common.css" type="text/css">
+<link rel="stylesheet" href="css/entry.css" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" href="img/favicon.ico">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/main.js"></script>
+<script src="js/main.js"></script>
 
 </head>
 <body>
@@ -275,8 +276,6 @@ gtag('config', 'UA-159140072-1');
 </div><!-- wrapper div -->
 
 <!-- footer -->
-<div class="footer-area">
-    <small>&copy; 1997,2023 mistsolution.All Rights Reserved.</small>
-</div>
+<footer id="footer"></footer>
 </body>
 </html>

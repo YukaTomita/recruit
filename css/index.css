@@ -281,33 +281,32 @@
       margin: 0;
       padding: 0;
     }
+  .f-top{
+    font-size: 1.6rem;
+    color: white;
+    line-height: 2.5rem;
+  }
   .reason-txt1{
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      line-height: 3rem;
+      line-height: 3.5rem;
     }
   .reason-txt2{
       position: absolute;
       top: 50%;
       left: 45%;
-      width: 500px;
+      width: 550px;
       transform: translate(-50%, -50%);
-      color: white;
-      line-height: 2.2rem;
-      font-size: 1.2rem;
   }
   .reason-txt3{
       position: absolute;
       top: 30%;
       left: 50%;
-      width: 500px;
+      width: 550px;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1.2rem;
-      line-height: 2.2rem;
     }
     
 .more {

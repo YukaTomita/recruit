@@ -19,14 +19,15 @@
     <meta property="og:image" content="assets/img/mist-ogp.jpg">
     <meta name="twitter:card" content="summary"/>
     <!-- favicon -->
-    <link rel="icon" href="../img/favicon.ico">    
+    <link rel="icon" href="img/favicon.ico">    
     <title>ENTRY失敗</title>
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../css/entry.css" type="text/css">
+    <base href="/recruit/">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/entry.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://kit.fontawesome.com/d1f90de413.js" crossorigin="anonymous"></script>
     <script>
         // WEBフォントの読み込みを待ってから表示（1秒後強制表示）
@@ -42,6 +43,8 @@
 <!--main-->
 <main>
     <div class="wrapper">
+        <div class="gap-control"></div>
+
         <div class="f-large-r">ENTRY</div>
         <div class="f-title">送信失敗</div>
     
@@ -59,18 +62,15 @@
                 <a href="mailto:r_pr@mistnet.co.jp"><div><i class="far fa-envelope"></i>&emsp;r_pr@mistnet.co.jp</div></a>
             </div>   
             <div class="gap-control"></div>
-            <a href="../index.html">
+            <a href="index.html">
                 <button class="top-button">TOPに戻る</button>
             </a>
         </section>
-    
+        <div class="gap-control"></div>
+
 </main>
-</body>
 <!-- footer -->
-<footer class="footer">
-    <small>&copy; 1997,2023 mistsolution.All Rights Reserved.</small>
-</footer>
+<footer id="footer"></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<sctipt src="../js/entry.js"></sctipt>
 </body>
 </html>

@@ -22,11 +22,12 @@
     <link rel="icon" href="../img/favicon.ico">    
     <title>ENTRY完了</title>
     <!--css-->
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <link rel="stylesheet" href="../css/entry.css" type="text/css">
+    <base href="/recruit/">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/entry.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
         // WEBフォントの読み込みを待ってから表示（1秒後強制表示）
         setTimeout(function () {
@@ -41,6 +42,8 @@
 <!--main-->
 <main>
     <div class="wrapper">
+        <div class="gap-control"></div>
+
         <div class="f-large-r">ENTRY</div>
         <div class="f-title">送信完了</div>
     
@@ -53,18 +56,14 @@
             しばらくお待ちください。<br>
             </div>
             <div class="gap-control"></div>
-            <a href="../index.html">
+            <a href="index.html">
                 <button class="top-button">TOPに戻る</button>
             </a>
         </section>
-    
+        <div class="gap-control"></div>
 </main>
-</body>
 <!-- footer -->
-<footer class="footer">
-    <small>&copy; 1997,2023 mistsolution.All Rights Reserved.</small>
-</footer>
+<footer id="footer"></footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<sctipt src="../js/entry.js"></sctipt>
 </body>
 </html>
