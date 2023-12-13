@@ -298,9 +298,11 @@ margin: 0 auto;
 
 .f-left{
     justify-content: flex-start;
+    text-align: justify;
 }
 .f-right{
     text-align: left;
+    text-align: justify;
 }
 .font-s{
     color: #8B2022;

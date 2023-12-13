@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'enterprise';
 $user = 'root';
-$password = 'root';
+$password = '';
 
 // データベースに接続
 $conn = new PDO("mysql:host=$host;dbname=$db", $user, $password);

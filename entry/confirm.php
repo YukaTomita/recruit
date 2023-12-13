@@ -88,9 +88,9 @@ $body .= "--__BOUNDARY__--";
 
 // 管理者確認用メール送信
 if(mb_send_mail( 'r_pr@mistnet.co.jp', $admin_reply_subject, $body, $header)){
-    header("Location: ../entry/thanks.php");
+    header("Location: ../entry/thanks.html");
 } else {
-    header("Location: ../entry/failure.php");
+    header("Location: ../entry/failure.html");
 }
     exit;
 }
